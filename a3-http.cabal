@@ -37,7 +37,9 @@ executable chat
                         utf8-string,
                         directory,
                         filepath,
-                        split
+                        split,
+                        mustache,
+                        text
 
     hs-source-dirs:   app
     default-language: Haskell2010

@@ -60,6 +60,16 @@
   (major1) == 1 && (major2) <  4 || \
   (major1) == 1 && (major2) == 4 && (minor) <= 2)
 #endif /* MIN_VERSION_filepath */
+/* package mustache-2.4.1 */
+#ifndef VERSION_mustache
+#define VERSION_mustache "2.4.1"
+#endif /* VERSION_mustache */
+#ifndef MIN_VERSION_mustache
+#define MIN_VERSION_mustache(major1,major2,minor) (\
+  (major1) <  2 || \
+  (major1) == 2 && (major2) <  4 || \
+  (major1) == 2 && (major2) == 4 && (minor) <= 1)
+#endif /* MIN_VERSION_mustache */
 /* package network-3.1.2.8 */
 #ifndef VERSION_network
 #define VERSION_network "3.1.2.8"
@@ -80,6 +90,16 @@
   (major1) == 0 && (major2) <  2 || \
   (major1) == 0 && (major2) == 2 && (minor) <= 3)
 #endif /* MIN_VERSION_split */
+/* package text-1.2.5.0 */
+#ifndef VERSION_text
+#define VERSION_text "1.2.5.0"
+#endif /* VERSION_text */
+#ifndef MIN_VERSION_text
+#define MIN_VERSION_text(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  2 || \
+  (major1) == 1 && (major2) == 2 && (minor) <= 5)
+#endif /* MIN_VERSION_text */
 /* package unix-time-0.4.9 */
 #ifndef VERSION_unix_time
 #define VERSION_unix_time "0.4.9"
