@@ -39,7 +39,11 @@ executable chat
                         filepath,
                         split,
                         mustache,
-                        text
+                        text,
+                        tzdata,
+                        tz,
+                        time,
+                        bytestring
 
     hs-source-dirs:   app
     default-language: Haskell2010

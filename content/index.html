@@ -3,27 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="refresh" content="2">
+    <meta http-equiv="refresh" content="30">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
         body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: #202020;
+            color: white;
             padding: 0px;
             margin: 0px;
         }
 
         div {
-            margin: 10%;
-            padding: 4%;
-            border: 1px solid green;
+            max-width: 600px;
+            margin: auto;
+            padding: 2em;
             text-align: center;
+        }
+
+        div.box {
+            background-color: #303030;
+            border-radius: 10px;
+            margin: auto;
+            padding: 2em;
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .country {
+            font-size: 1em;
+        }
+        .time {
+            font-family: monospace;
+            font-size: 3em;
+            color: lightgreen;
+        }
+        .date {
+            font-family: monospace;
+            font-size: 2em;
+        }
+
+        #search {
+            width: 80%;
+            float: left;
         }
     </style>
 </head>
 <body>
+    <h1> <u>Timezones</u> </h1>
+
     <div>
-        <span>South Africa: {{time-time}}</span>
-        <span>{{time-date}}</span>
+        <form action="search" method="get">
+            <input type="text" name="search" id="search">
+            <input type="submit" value="Search">
+        </form>
     </div>
+
+    {{#timezones}}
+    <div class="box">
+        <span class="country">{{name}}</span>
+        <br /><br />
+        <span class="time">{{time}}</span>
+        <br />
+        <span class="date">{{date}}</span>L
+    </div>
+    {{/timezones}}
+
+    {{#empty}}
+    <div>
+        <span>No results!</span>
+    </div>
+    {{/empty}}
 </body>
 </html>

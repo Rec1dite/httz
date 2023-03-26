@@ -30,6 +30,16 @@
   (major1) == 1 && (major2) <  0 || \
   (major1) == 1 && (major2) == 0 && (minor) <= 2)
 #endif /* MIN_VERSION_base16_bytestring */
+/* package bytestring-0.11.3.1 */
+#ifndef VERSION_bytestring
+#define VERSION_bytestring "0.11.3.1"
+#endif /* VERSION_bytestring */
+#ifndef MIN_VERSION_bytestring
+#define MIN_VERSION_bytestring(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  11 || \
+  (major1) == 0 && (major2) == 11 && (minor) <= 3)
+#endif /* MIN_VERSION_bytestring */
 /* package cryptohash-0.11.9 */
 #ifndef VERSION_cryptohash
 #define VERSION_cryptohash "0.11.9"
@@ -100,6 +110,36 @@
   (major1) == 1 && (major2) <  2 || \
   (major1) == 1 && (major2) == 2 && (minor) <= 5)
 #endif /* MIN_VERSION_text */
+/* package time-1.11.1.1 */
+#ifndef VERSION_time
+#define VERSION_time "1.11.1.1"
+#endif /* VERSION_time */
+#ifndef MIN_VERSION_time
+#define MIN_VERSION_time(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  11 || \
+  (major1) == 1 && (major2) == 11 && (minor) <= 1)
+#endif /* MIN_VERSION_time */
+/* package tz-0.1.3.6 */
+#ifndef VERSION_tz
+#define VERSION_tz "0.1.3.6"
+#endif /* VERSION_tz */
+#ifndef MIN_VERSION_tz
+#define MIN_VERSION_tz(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  1 || \
+  (major1) == 0 && (major2) == 1 && (minor) <= 3)
+#endif /* MIN_VERSION_tz */
+/* package tzdata-0.2.20221129.0 */
+#ifndef VERSION_tzdata
+#define VERSION_tzdata "0.2.20221129.0"
+#endif /* VERSION_tzdata */
+#ifndef MIN_VERSION_tzdata
+#define MIN_VERSION_tzdata(major1,major2,minor) (\
+  (major1) <  0 || \
+  (major1) == 0 && (major2) <  2 || \
+  (major1) == 0 && (major2) == 2 && (minor) <= 20221129)
+#endif /* MIN_VERSION_tzdata */
 /* package unix-time-0.4.9 */
 #ifndef VERSION_unix_time
 #define VERSION_unix_time "0.4.9"
