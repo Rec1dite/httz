@@ -4,26 +4,41 @@ module Main where
 
 -- Sockets + Concurrency
 import Network.Socket
+    ( socketToHandle,
+      setSocketOption,
+      accept,
+      bind,
+      listen,
+      socket,
+      SocketOption(ReuseAddr),
+      Family(AF_INET),
+      SockAddr(SockAddrInet),
+      Socket,
+      SocketType(Stream) )
 import System.IO
-import Control.Concurrent
-import Control.Concurrent.Chan
+import Control.Concurrent ( newChan, forkIO, Chan )
+import Control.Concurrent.Chan ( newChan, Chan )
 
 -- Template Parsing
 import Text.Mustache
-import Text.Mustache.Types
+    ( automaticCompile, substituteValue, object, (~>), ToMustache(..) )
+import Text.Mustache.Types ( object, (~>), ToMustache(..), Value )
 import Data.Text (unpack, split, pack, isPrefixOf, isInfixOf, toLower)
 
 -- Appointment Data
-import Data.UnixTime
+import Data.UnixTime ( getUnixTime, Format )
 import Data.ByteString.UTF8 (toString, fromString)
 import GHC.IO (catchAny)
 import Network.Socket.ByteString (sendAll, recv)
 import qualified Data.ByteString.Lazy.Char8 as LBS
 
-import Data.Time.Zones.DB
-import Data.Time.Zones.Read
-import Data.Time.Clock
+import Data.Time.Zones.DB ( tzDataByLabel, TZLabel )
+import Data.Time.Zones.Read ( parseOlson )
+import Data.Time.Clock ( getCurrentTime )
 import Data.Time.Zones (timeZoneForPOSIX, utcToLocalTimeTZ)
+
+-- See [https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-LocalTime.html]
+-- and [https://hackage.haskell.org/package/tz-0.1.3.6/docs/Data-Time-Zones.html]
 
 
 type Msg = String
